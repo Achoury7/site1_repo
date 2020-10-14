@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head> 
+	<meta charset="utf-8">
+		<link rel="shortcut icon" type="image/x-con" href="D:\LUDUS\Web - Sublime Text\Web\Web_Statique\TP Web\JAVASCRIPT\Introduction\Cours\Tests\images\icon_small.png">
+		<link rel="stylesheet" type="text/css" href="D:\LUDUS\Web - Sublime Text\Web\Web_Statique\TP Web\JAVASCRIPT\Introduction\Cours\Tests\css\variables.css">
+    <style type="text/css">
+      #dybo{
+        background-color: lightpink;
+      }
+    </style>
+	<title>Moyenne</title>
+</head>
+<header>
+	<h1> JavaScript : La Moyenne </h1>
+</header>
+<footer>
+	A.C
+</footer>
+<body id="dybo">
+
+<input  id="nombreun" required="" type="number" value="" placeholder="Premier nombre"> Taper le premier nombre </input>
+<input id="nombredeux" required="" type="number" value="" placeholder="Deuxieme nombre"> Taper le deuxieme nombre </input>
+<input id="nombretrois" required="" type="number" value="" placeholder="Troisieme nombre"> Taper le troisieme nombre </input>
+<input id="nombrequatre" required="" type="number" value="" placeholder="Quatrieme nombre"> Taper le quatrieme nombre </input>
+
+
+<script type="text/javascript">
+
+
+
+function moyenne () {
+	var nombreun = document.GetElementById('nombreun');
+	var nombredeux = document.GetElementById('nombredeux');
+	var nombretrois = document.GetElementById('nombretrois');
+	var nombrequatre = document.GetElementById('nombrequatre');
+
+    var moyenne = nombreun + nombredeux + nombretrois + nombrequatre / 4
+
+
+    return document.write('moyenne')
+
+
+
+</script>
+</body>
+</html>

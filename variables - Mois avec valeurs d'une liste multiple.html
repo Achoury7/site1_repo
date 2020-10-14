@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head> 
+	<meta charset="utf-8">
+		<link rel="shortcut icon" type="image/x-con" href="D:\LUDUS\Web - Sublime Text\Web\Web_Statique\TP Web\JAVASCRIPT\Introduction\Cours\Tests\images\icon_small.png">
+		<link rel="stylesheet" type="text/css" href="D:\LUDUS\Web - Sublime Text\Web\Web_Statique\TP Web\JAVASCRIPT\Introduction\Cours\Tests\css\variables.css">
+    <style type="text/css">
+      #dybo{
+        background-color: lightpink;
+      }
+    </style>
+	<title>Intro variables</title>
+</head>
+<header>
+	<h1> JavaScript : Année Bissextile et Switch Case </h1>
+</header>
+<body id="dybo">
+<script>
+	var obj = document.getElementById("p1"); //permet de récupérer les éléments de la balise conenant l'id p1
+            var contenu = obj.innerHTML;
+            console.log(contenu);
+            obj.innerHTML = obj.innerHTML + addition(23, 45);   //on peut aussi écrire obj.innerHTML += addition(x,y);
+            console.log(obj.innerHTML); //affiche la nouvelle valeur du innerHTML
+</script>
+ <nav>
+            <input id="annee" required="required" type="number" value="" placeholder="Annee">
+            <button onclick="modifstyle">Bissextile? </button>
+ </nav>
+ <script>
+            function bisextile(){
+            //initialisation 
+            document.getElementById("annee").style.border = "solid red";
+                //recuperer variable saisie par l'utilisateur
+            var annee = document.getElementById("annee").value;
+                
+                if((annee%4 == 0) && (annee%100 != 0) || (annee%400 == 0)){ 
+                	document.getElementById("annee").style.border = "solid green";
+                }
+
+                return true;
+
+            }
+
+        function bisextile(annee){
+            //initialisation 
+            document.getElementById("annee").style.border = "solid red";
+                //recuperer variable saisie par l'utilisateur
+           // var annee = document.getElementById("annee").value;
+                
+                if(annee>0){ 
+                	if((annee%4 == 0) && (annee&100 != 0) || (bisex%400 ==0)){
+
+
+                	document.getElementById("annee").style.border = "solid green";
+                
+
+                return true;
+
+            }
+           }
+           alert("saisir une valeur!");
+           return false;
+           		//fonction retournant un booleen
+            function estbisextile2(annee){
+            //initialisation 
+    
+              if(annee>0){ 
+               return((annee%4 == 0) && (annee&100 != 0) || (bisex%400 == 0))
+              }else{
+
+              alert("saisir une valeur!");
+
+
+                	//document.getElementById("annee").style.border = "solid green";
+                
+
+                //return true;
+
+            }
+           }
+           alert("saisir une valeur!");
+           	//fonction qui fait quelque chose: modifier le style d'un element
+           	//une fonction qui appelle une autre fonction
+           function modifstyle(){
+           	//initialisation
+           	   						document.getElementById("annee").style.border = "solid red";
+           	if(estBisextile2(document.getElementById('annee').value)){
+           			               	document.getElementById("annee").style.border = "solid green";
+           }
+           //return false;
+                /*else{
+                	document.getElementById("annee").style.border = "solid red";
+                }*/
+               
+                
+                
+         
+            /*var iModTest = prompt("Saisir Entier", "Entier"), iMulti = prompt("Entrez le multiplicateur", "Multiplicateur"); //demande à l'utilisateur de rentrer un nombre
+            if(iModTest % iMulti == 0){
+                console.log("C'est un multiple de ", iMulti, ".");   
+            }else{
+                console.log("Ce n'est pas un multiple de ", iMulti, ".");
+            }// On peut également mettre ! devant une condition pour non rempli
+            console.log(typeof(iModTest));
+            console.log(typeof(iModTest*1));*/
+            
+
+            //isopen: revoie un booleen 
+        </script>
+
+
+     <!-- Exercice liste de valeurs au mois, avec un select size de -->
+
+
+<input type="select">
+<form> 
+
+<script>
+   
+      function saisiemois(){
+       var ete = 'juillet, aout, septembre'
+       switch (ete) {
+        case 0:
+        output +='juillet';
+        case 1:
+        output += 'aout';
+        case 2:
+        output += 'septembre';
+
+
+
+        
+      console.log ('cette saison correspond aux mois suivant')
+
+      var automne = 'octobre, novembre, decembre'
+      switch (automne){
+        case 3: 
+        output += 'octobre':
+        case 4:
+        output += 'novembre':
+        case 5:
+        output += 'decembre':
+
+        break;
+
+        default: 'veuillez saisir un mois'
+         alert('veuillez saisir un mois!')
+
+        
+      }
+      var hiver ='janvier, fevrier, mars'
+          switch (hiver){
+            case 6: 
+            output += 'janvier':
+            case 7:
+            output += 'fevrier':
+            case 8:
+            output += 'mars'   :
+          
+          break;
+
+          default: 'veulliez saisir un mois'
+           alert('veuillez saisir un mois!')
+          }
+
+      var printemps ='avril, mai, juin'
+          switch (printemps){
+            case 9:
+            output += 'avril':
+            case 10:
+            output += 'mai'  :
+            case 11:
+            output += 'juin' :
+            
+            break; 
+
+            default: 'veuillez saisir un mois'
+            alert('veuillez saisir un mois!')
+
+          }
+       }
+
+      </script>
+
+     
+      
+       <!-- <option valeur="">Janvier</option>
+        <option valeur="">Février</option>
+        <option valeur="">Mars</option>
+        <option valeur="">Avril</option>
+        <option valeur="">Mai</option>
+        <option valeur="">Juin</option>
+        <option valeur="">Juillet</option>
+        <option valeur="">Aout</option>
+        <option valeur="">Septembre</option>
+        <option valeur="">Octobre</option>
+        <option valeur="">Novembre</option>
+        <option valeur="">Décembre</option> -->
+    </select>
+      <script>
+var  saisons = [],
+    selectBox = document.getElementById("mois"),
+    i;
+ 
+for (i=0; i < mois.length; i++) 
+{
+  if (moisBox[i].selected) 
+  {
+    saisonsList.push(moisBox[i]);
+    
+ 
+  alert('veuillez saisir un mois de lannee');
+
+console.log (mois);
+}
+</script>
+
+<footer>
+	<p>AC</p>
+</footer>
+
+<nav class="menu">
+         <ul id="liste1">
+            <li><a href="Site Web Structures De Controle.html">        Retour au menu principal       </a></li> 
+          </ul>
+        </nav>
+</body>
+</html>
+	

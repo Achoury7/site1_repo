@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head> <meta charset="utf-8">
+
+<link rel="shortcut icon" type="image/x-con" href="D:\LUDUS\Web - Sublime Text\Web\Web_Statique\TP Web\JAVASCRIPT\Introduction\Cours\Tests\images\icon_small.png">
+<link rel="stylesheet" type="text/css" href="D:\LUDUS\Web - Sublime Text\Web\Web_Statique\TP Web\JAVASCRIPT\Introduction\Cours\Tests\html\js_random.html">
+
+	<style type="text/css">
+
+#d1{
+	border-radius: 20px;
+	height: 80px;
+	width:  80px;
+	background-color: red;
+	border: solid;
+	border-color: green;
+}
+	#d2{
+	border-radius: 20px;
+	height: 80px;
+	width:  80px;
+	background-color: red;
+	border: solid;
+	border-color: green;
+}
+
+#dybo {
+	background-color: lightyellow;
+}
+</style> 
+
+
+
+	
+	
+
+
+<title> Select </title>
+</head> 
+	<header> <link src="D:\LUDUS\Web - Sublime Text\Web\Web_Statique\TP Web\JAVASCRIPT\Introduction\Cours\Tests\images\icon_small.png" tile="logo" alt="logo java" width=50px height=50px> 
+		 </header>
+
+<footer> A.C </footer>
+<body id="dybo">
+
+
+
+
+<h2> JavaScript : Le Type Select </h2>
+<!-- <h2> Utilisation, Div, random, boucles. CSS </h2> -->
+
+<div id="d1" name="monCadre" class="class1" value=""> </div>
+
+
+
+<script type="text/javascript">
+var monCadre = document.getElementById('d1');
+console.log(monCadre.className);
+	
+document.write("<div id='d2' name='monCadre2' class='class2' value=''> </div>");
+var monCadre2 = document.getElementById('d2');
+console.log(monCadre2.className);
+console.log(monCadre2.offsetWidth);
+
+var tabNom =["LeTavernier",
+				"Kunz",
+					"Choury"];
+
+var lgTab = tabNom.length;  //lgTab = longeur tableau
+console.table (tabNom); //declaration de tableau
+console.log (tabNom);
+console.log (typeof(tabNom)); //un tableau est un objet
+console.log (Array.isArray(tabNom));
+console.log (typeof(tabNom [0])); //la reponse de la console est number ; length definit la longueur du tableau
+console.log (typeof(tabNom.length));
+console.log (tabNom[lgTab-1]); ///La reponse de l'interrogation de la console est undefined. - un tableau va de 0 a longueur -1
+
+for (i = 0; i < lgTab ; i ++){
+	document.write(tabNom[i]); //document.write(tabNom[i]) = afficher le tableau au nom "tabNom" d'indice i
+}
+
+
+//Pattern: dabord document write, ensuite var, et enfin, console.log (ne pas oublier le style) proprietes avec.width (sans le point))
+
+function recupSelect(){
+
+//alert('clic');
+var selectBox = document.getElementById('selnom1'); //affiche le contenu select
+console.log (selectBox);
+var tabOptions = selectBox.options; //affiche les options
+console.log (tabOptions);	
+var lgTabOptions = tabOptions.length; //affiche le nombre d'options
+console.log (tabOptions);
+var lastOption = tabOptions[lgTab-1]; //affiche la derniere option
+console.log (lastOption);
+
+
+var selectedNom = selectBox.value;
+console.log (selectedNom); //selectionne le nom et lui donne sa value.
+
+var selectedIndice = document.getElementById('selnom1').selectedIndex; //on recupere l'indice des elements par id du "selnom1".
+console.log ("test : " + selectedIndice); 
+
+alert(selectBox.options[selectedIndice].value); //recupere le texte de la value
+alert(selectBox.options[selectedIndice].text);
+}
+
+   /*document.write("<select multiple id='selStudent' size=3 onChange=''>");
+
+              document.write("<option value=-1 selected>Sélectionner un étudiant</option>");
+
+             
+
+              for (i=0 ; i<tabEtudiant.length; i++){
+
+   document.write("<option value=" + i + ">" + tabEtudiant[i] + "</option>");
+}*/	
+
+
+
+
+
+</script>
+
+<script type="text/javascript">
+//Mon tableau
+ var  tabEtudiant = ["LETAVERNIER","KUNZ", "CHOURY", "EITEL"];
+//Parcourir un tableau avec boucle foreach
+  //Itération sur le tableau par rapport à la clé
+  Object.keys(tabEtudiant).forEach(key => {
+  console.log(key, tabEtudiant[key]);
+
+  });
+
+ //Afficher les valeurs
+ Object.values(tabEtudiant).forEach(val => {
+ console.log(val);
+    });
+
+       //Afficher selon couple clé valeur défini
+ Object.entries(tabEtudiant).forEach(entry => {
+
+  //Génération de la liste
+ document.write("<select multiple id='selStudent' size=3 onChange=''>");
+ document.write("<option value=-1 selected>Sélectionner un étudiant</option>");
+
+  /*
+
+ for (i=0 ; i<tabEtudiant.length; i++){
+document.write("<option value=" + i + ">" + tabEtudiant[i] + "</option>");
+
+       }
+
+ */
+
+Object.keys(tabEtudiant).forEach(key => {
+document.write("<option value=" + key + ">" + tabEtudiant[key] + "</option>");
+
+ });
+              document.write("</select>");
+
+//Génération de la liste
+
+            function recupSelect(){
+               var indiceSelect = document.getElementById('idTab').selectedIndex;
+                console.log(tabNom[i] + indiceSelect);
+              }
+
+
+            var tabNom = ["leTavernier","KUNZ","CHOURY"];
+            var lgTab = tabNom.length;
+
+            document.write("<select multiple id='selnom1' name='selectName' size=3 onChange='recupSelect();'>");
+            document.write("<option value=-1 selected>Sélection</option>");
+
+            for (i=0 ; i<tabNom.length; i++){
+                document.write("<option value=0" + i + ">" + tabNom[i] + "</option>");
+            }
+            document.write("</select>");
+})
+</script>
+<select id="selnom1" name="noms1" onchange = "recupSelect();"> <!-- Cree un pop up alert lorsque on selectionne par exemple, Kunz -->
+
+	<option value="1"> LeTavernier </option>
+	<option value="2"> Kunz		   </option>
+	<option value="3"> Choury      </option>
+
+</select> <!-- cree une liste deroulante avec les options indiquées (trois options, trois choix) -->	
+
+
+
+</body>
+
+<nav class="menu">
+         <ul id="liste1">
+            <li><a href="Site Web Structures De Controle.html">        Retour au menu principal       </a></li> 
+          </ul>
+        </nav>
+
+
+
+</html>
