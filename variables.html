@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head> 
+	<meta charset="utf-8">
+		<link rel="shortcut icon" type="image/x-con" href="D:\LUDUS\Web - Sublime Text\Web\Web_Statique\TP Web\JAVASCRIPT\Introduction\Cours\Tests\images\icon_small.png">
+		<link rel="stylesheet" type="text/css" href="D:\LUDUS\Web - Sublime Text\Web\Web_Statique\TP Web\JAVASCRIPT\Introduction\Cours\Tests\css\variables.css">
+
+	<title>Intro variables</title>
+<style type="text/css">
+
+#dybo {
+	background-color: lightblue;
+}
+
+#p1{
+	color: red;
+}
+
+p{
+	border: 8px double purple;
+	font-style: italic;
+}
+
+</style>
+</head>
+
+<header>
+	<h1> JavaScript : Variables </h1>
+</header>
+<body id="dybo">
+<script> var mavariable = "23"; 
+//Sortie Console 
+		 console.log ("Ma variable vaut:", mavariable);
+		 mavar: "";
+		 var mavariable2;
+
+		 console.log ("ma variable 2 vaut:", mavariable2); 
+
+		 console.log (typeof (mavariable));
+
+		 var op1 = 23;
+
+		 var op2 = 45;
+
+		 console.log("ma variable op1et2 vaut:", op1+op2);
+
+
+		 console.log("ma variable op1et2 vaut:", op1+op2);
+
+		 console.log("ma variable op2et1 vaut:", op2+op1);
+
+		 var op3 = 23;
+
+		 var op4 = 23.0;
+
+		 console.log(op3 == op4); // == : difference entre  valeurs
+
+		 console.log(op3 === op4);  // === comparaison entre la valeur et le type
+
+		 function addition (op1, op2){
+
+		return op1+op2; 
+		 }
+ 		document.write("le resultat est:", addition (op1, op2));
+
+		
+		 //une fonction renvoie un resultat (vaut quelque chose) (return)
+
+</script>
+
+		<p>"Le résultat de l'addition est = a :
+		
+<script> document.write (addition (23,45)); //methode 1 
+</script> </p> 
+
+<script> //methode 2 
+		document.write ("<p> Le résultat de l'addition est: ", addition (23,45), "</p>"); 
+</script>
+	
+
+		<p id="p1"> Le résultat de l'addition est: </p> 
+<script> 
+
+		var obj = document.getElementById("p1");
+		var contenu = obj.innerHTML; 
+		console.log (contenu); //methode 3
+
+		obj.innerHTML += addition(23,45); //reaffectation += 
+
+</script>
+
+<p id="p1"> <!InnerHTML> 
+	Le resultat de l'addition est: 
+<p>
+
+<script>
+	var obj = document.getElementById("p1"); //permet de récupérer les éléments de la balise conenant l'id p1
+            var contenu = obj.innerHTML;
+            console.log(contenu);
+            obj.innerHTML = obj.innerHTML + addition(23, 45);   //on peut aussi écrire obj.innerHTML += addition(x,y);
+            console.log(obj.innerHTML); //affiche la nouvelle valeur du innerHTML
+</script>
+ <nav>
+            <input id="id1" type="number" value="" placeholder="Nombre">
+            <input id="id2" type="number" value="" placeholder="Mulitplicateur">
+            <input id="id3" type="number" value="" placeholder="Resultat">
+            <input type="button" value="Multiplier" onclick="calcul()">
+ </nav>
+ <script>
+            function calcul(){
+                if((document.getElementById("id1").value == 0)||(document.getElementById("id2").value == 0)){
+                    alert("Il manque un champ obligatoire.");
+                }else{
+                    document.getElementById("id3").value = document.getElementById("id1").value * document.getElementById("id2").value;
+                }   
+            }
+            /*var iModTest = prompt("Saisir Entier", "Entier"), iMulti = prompt("Entrez le multiplicateur", "Multiplicateur"); //demande à l'utilisateur de rentrer un nombre
+            if(iModTest % iMulti == 0){
+                console.log("C'est un multiple de ", iMulti, ".");   
+            }else{
+                console.log("Ce n'est pas un multiple de ", iMulti, ".");
+            }// On peut également mettre ! devant une condition pour non rempli
+            console.log(typeof(iModTest));
+            console.log(typeof(iModTest*1));*/
+            
+        </script>
+
+<footer>
+	<p>AC</p>
+</footer>
+
+<nav class="menu">
+         <ul id="liste1">
+            <li><a href="Site Web Structures De Controle.html">   Retour au menu principal       </a></li> 
+          </ul>
+        </nav>
+
+</body>
+</html>
+	
